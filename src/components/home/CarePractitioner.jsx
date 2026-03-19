@@ -38,7 +38,7 @@ export default function CarePractitioner() {
     <section id="Onboard" className="py-12 bg-gray-50 bg-opacity-50">
       <div className="container mx-auto px-4 my-8">
         <div className="text-center mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] inline-block mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] inline-block mb-4">
             Are you a care practitioner ?
           </h1>
           <h4 className="text-xl font-medium text-gray-700">Click here to start engaging CareAssists in your organization to improve care.</h4>

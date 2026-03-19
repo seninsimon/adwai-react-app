@@ -9,9 +9,6 @@ export default function CareAssistPage() {
           <h1 className="text-3xl lg:text-5xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] hidden md:block">
             Create your free live chat
           </h1>
-          <h1 className="text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] md:hidden">
-            Create your free live chat
-          </h1>
           <p className="text-lg text-gray-700 mb-8 max-w-lg">
             Embed live chat to your website after customizing it to your business
           </p>

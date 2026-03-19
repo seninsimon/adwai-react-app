@@ -29,15 +29,14 @@ export default function CustomPlans() {
         </div>
       </section>
 
-      <section className="py-12 bg-gray-50 border-t border-gray-200">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-2xl md:text-3xl font-semibold">
-            <Link to="/contact" className="hover:opacity-80 transition-opacity bg-clip-text text-transparent bg-gradient-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30]">
+            <Link to="/contact" className="hover:opacity-80 transition-opacity bg-clip-text text-transparent bg-linear-to-r underline underline-offset-4 from-[#4C74F6] via-[#E253E5] to-[#FF7E30]">
               Write to us for a custom pricing plan tailored to your needs.
             </Link>
           </h3>
         </div>
-      </section>
+  
     </>
   );
 }
