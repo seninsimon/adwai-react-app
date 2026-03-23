@@ -1,24 +1,59 @@
-import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 
 export default function CareAssistPage() {
   return (
     <section className="container mx-auto px-4 mt-8 lg:mt-16 mb-16">
-      <div className="flex flex-col md:flex-row items-center border border-gray-200 rounded-3xl overflow-hidden bg-white shadow-sm">
-        <div className="md:w-7/12 p-8 md:p-16">
-          <h1 className="text-3xl lg:text-5xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] hidden md:block">
-            Create your free live chat
-          </h1>
-          <p className="text-lg text-gray-700 mb-8 max-w-lg">
-            Embed live chat to your website after customizing it to your business
-          </p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-[#e867e6] hover:bg-[#8967ef] text-white px-8 py-4 rounded-full font-medium transition-colors shadow-sm">
-            Create Live Chat <FaArrowRight />
-          </Link>
+      
+      <div className="grid md:grid-cols-2 gap-6">
+
+        {/* CARE CARD */}
+        <div className="bg-white border border-gray-200 rounded-2xl p-8 md:p-10 shadow-sm flex flex-col justify-between">
+          
+          <div>
+            <h2 className="text-2xl lg:text-3xl font-semibold mb-4 text-gray-800">
+              Care Platform
+            </h2>
+
+            <p className="text-gray-600 mb-6">
+              Access our care services platform designed to manage and deliver
+              better support experiences for your users and customers.
+            </p>
+          </div>
+
+          <a
+            href="https://care.piaxu.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-[#4C74F6] hover:bg-[#3b5fe0] text-white px-6 py-3 rounded-lg font-medium transition"
+          >
+            Go to Care <FaArrowRight />
+          </a>
         </div>
-        <div className="md:w-5/12 bg-gray-50 flex justify-center items-center py-16 px-8 rounded-l-3xl shadow-inner">
-          <img src="/images/chat_bg.png" className="w-full max-w-sm h-auto object-contain drop-shadow-md" alt="Live Chat Banner" />
+
+        {/* ASSIST CARD */}
+        <div className="bg-white border border-gray-200 rounded-2xl p-8 md:p-10 shadow-sm flex flex-col justify-between">
+          
+          <div>
+            <h2 className="text-2xl lg:text-3xl font-semibold mb-4 text-gray-800">
+              Assist Platform
+            </h2>
+
+            <p className="text-gray-600 mb-6">
+              Manage live chat, customer interactions, and automation tools
+              through the Assist dashboard for better engagement.
+            </p>
+          </div>
+
+          <a
+            href="https://assist.piaxu.com/dashboard"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-[#e867e6] hover:bg-[#8967ef] text-white px-6 py-3 rounded-lg font-medium transition"
+          >
+            Go to Assist <FaArrowRight />
+          </a>
         </div>
+
       </div>
     </section>
   );

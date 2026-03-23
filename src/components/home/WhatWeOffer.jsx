@@ -58,7 +58,7 @@ export default function WhatWeOffer() {
     <section id="services" className="py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] inline-block">
+          <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] inline-block">
             What we offer?
           </h1>
         </div>

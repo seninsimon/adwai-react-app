@@ -8,7 +8,7 @@ export default function CustomPlans() {
           <div className="flex flex-wrap items-center -mx-4">
             <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
               <div className="pr-0 md:pr-12">
-                <h1 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] inline-block mb-6">
+                <h1 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] inline-block mb-6">
                   Need Something Custom?
                 </h1>
                 <p className="text-lg text-gray-700 mb-6">We support a wide range of use cases and partner models. Whether you're:</p>
