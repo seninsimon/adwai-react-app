@@ -3,7 +3,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import { useState } from "react";
 
 export default function WhatWeOffer() {
-  const onboardAssists = [
+  const assists = [
     {
       title: "Find Care Assist",
       img: "/images/banner_04.png",
@@ -14,9 +14,6 @@ export default function WhatWeOffer() {
       img: "/images/banner_03.png",
       desc: "Book Care Assist streamlines the appointment scheduling and onboarding process through conversational booking integrated with scheduling systems. It guides patients step-by-step to confirm appointments and complete necessary onboarding forms or checks. This ensures a seamless transition into care, reducing delays and administrative hassle.",
     },
-  ];
-
-  const journeyAssists = [
     {
       title: "Prep Assist",
       img: "/images/banner_02.png",
@@ -41,7 +38,7 @@ export default function WhatWeOffer() {
 
   const carouselSettings = {
     modules: [Pagination, Autoplay],
-    spaceBetween: 20,
+    spaceBetween: 15,
     slidesPerView: 1,
     breakpoints: {
       640: { slidesPerView: 1 },
@@ -51,47 +48,29 @@ export default function WhatWeOffer() {
     },
     pagination: { clickable: true },
     autoplay: { delay: 4000, disableOnInteraction: false },
-    className: "pb-12",
+    className: "pb-12!",
   };
 
   return (
-    <section id="services" className="py-12">
+    <section id="services" className="py-10">
       <div className="container mx-auto px-4">
+        
+        {/* HEADING */}
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] inline-block">
-            What we offer?
+          <h1 className="text-3xl font-semibold text-[#1F2937]">
+            What We Offer
           </h1>
         </div>
 
-        <div className="mb-12">
-          <h4 className="text-2xl font-semibold mb-6">Onboard Assists</h4>
-          <Swiper {...carouselSettings}>
-            {onboardAssists.map((assist, index) => (
-              <SwiperSlide key={`onboard-${index}`} className="h-auto">
-                <AssistCard assist={assist} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
-        <div className="mb-8">
-          <h4 className="text-2xl font-semibold mb-6">Journey Assists</h4>
-          <Swiper {...carouselSettings}>
-            {journeyAssists.map((assist, index) => (
-              <SwiperSlide key={`journey-${index}`} className="h-auto">
-                <AssistCard assist={assist} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
-        <div className="text-center mt-10">
-          <a
-            href="http://journeys.adwai.com/"
-            className="inline-flex items-center gap-2 bg-[#e867e6] hover:bg-[#8967ef] text-white px-6 py-3 rounded-full font-medium transition-colors"
-          >
-            More →
-          </a>
+        {/* SINGLE CAROUSEL */}
+        <div  >
+          <Swiper  {...carouselSettings}>
+          {assists.map((assist, index) => (
+            <SwiperSlide key={index} className="h-auto">
+              <AssistCard assist={assist} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
         </div>
       </div>
     </section>
@@ -102,12 +81,12 @@ function AssistCard({ assist }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="border border-gray-200 rounded-xl p-5 h-full bg-white hover:shadow-md transition-shadow">
-      <div className="bg-[#f2f4ff] rounded-xl p-5 h-full flex flex-col items-center text-center justify-between">
+    <div className="border border-[#D1D5DB] rounded-lg p-4 h-full bg-white hover:shadow-sm transition">
+      <div className="bg-[#F9FAFB] rounded-lg p-5 h-full flex flex-col items-center text-center justify-between space-y-4">
         
-        {/* IMAGE */}
+        {/* IMAGE + TITLE */}
         <div>
-          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white p-3 sm:p-4 border border-gray-200 mb-4 mx-auto shadow-sm">
+          <div className="w-24 h-24 rounded-full bg-white p-3 border border-[#D1D5DB] mb-3 mx-auto">
             <img
               src={assist.img}
               alt={assist.title}
@@ -115,26 +94,24 @@ function AssistCard({ assist }) {
             />
           </div>
 
-          {/* TITLE */}
-          <div className="font-semibold text-lg mb-3 text-gray-800">
+          <h3 className="font-semibold text-base text-[#1F2937]">
             {assist.title}
-          </div>
+          </h3>
         </div>
 
         {/* DESCRIPTION */}
         <div>
           <p
-            className={`text-sm text-gray-600 text-justify leading-relaxed transition-all duration-300 ${
+            className={`text-sm text-gray-600 text-justify leading-relaxed transition-all ${
               expanded ? "" : "line-clamp-3"
             }`}
           >
             {assist.desc}
           </p>
 
-          {/* READ MORE */}
           <button
             onClick={() => setExpanded(!expanded)}
-            className="mt-3 text-sm text-[#4C74F6] hover:underline"
+            className="mt-2 text-sm text-blue-600 hover:underline"
           >
             {expanded ? "Read Less" : "Read More"}
           </button>

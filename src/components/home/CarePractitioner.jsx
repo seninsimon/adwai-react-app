@@ -35,7 +35,7 @@ export default function CarePractitioner() {
   ];
 
   return (
-    <section id="Onboard" className="py-12 bg-gray-50 bg-opacity-50">
+    <section id="Onboard" className="py-8">
       <div className="container mx-auto px-4 my-8">
         <div className="text-center mb-10">
           <h1 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] inline-block mb-4">

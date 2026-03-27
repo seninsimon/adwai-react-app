@@ -29,7 +29,7 @@ export default function Header() {
         <nav className="hidden lg:flex items-center space-x-6">
           <Link to="/" className="text-gray-800 hover:text-[#94d201] font-medium">Home</Link>
           <a href="/#whatwedo" className="text-gray-800 hover:text-[#94d201] font-medium">What we do</a>
-          <a href="/#services" className="text-gray-800 hover:text-[#94d201] font-medium">How It Works</a>
+          <a href="/#services" className="text-gray-800 hover:text-[#94d201] font-medium">What we offer</a>
           <a href="/#price" className="text-gray-800 hover:text-[#94d201] font-medium">Pricing</a>
           <Link to="/contact" className="text-gray-800 hover:text-[#94d201] font-medium">Contact</Link>
 
