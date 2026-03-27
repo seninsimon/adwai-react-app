@@ -4,7 +4,7 @@ import { FaCheck } from 'react-icons/fa';
 export default function Pricing() {
   const plans = [
     {
-      name: 'Preemium',
+      name: 'Premium',
       price: '$0',
       credits: '50 Credits',
       features: ['Perfect for getting started and exploring the platform.']

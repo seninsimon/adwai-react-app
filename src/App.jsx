@@ -4,10 +4,13 @@ import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
 import CareAssistPage from './pages/CareAssistPage';
 import ContactPage from './pages/ContactPage';
+import ScrollToTop from './components/home/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop /> 
+
       <div className="min-h-screen flex flex-col font-outfit">
         <Header />
         <main className="grow pt-[100px]">

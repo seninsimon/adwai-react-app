@@ -5,6 +5,7 @@ import CarePractitioner from '../components/home/CarePractitioner';
 import WhyPartner from '../components/home/WhyPartner';
 import Pricing from '../components/home/Pricing';
 import CustomPlans from '../components/home/CustomPlans';
+import ScrollToTopButton from '../components/home/ScrollToTopButton';
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <WhyPartner />
       <Pricing />
       <CustomPlans />
+      <ScrollToTopButton /> 
     </>
   );
 }
