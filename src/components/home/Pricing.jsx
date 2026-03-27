@@ -24,10 +24,10 @@ export default function Pricing() {
   ];
 
   return (
-    <section id="price" className="py-16 bg-gray-50 bg-opacity-50">
+    <section id="price" className="py-16  bg-opacity-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] inline-block mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] inline-block mb-4">
             Pricing
           </h1>
           <h4 className="text-xl font-semibold text-gray-800 mb-2">Simple, Flexible Pricing</h4>

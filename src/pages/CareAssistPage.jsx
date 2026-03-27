@@ -29,7 +29,7 @@ export default function CareAssistPage() {
             href="https://assist.piaxu.com/dashboard"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-white bg-[#1F2937] hover:bg-black px-5 py-2.5 rounded-lg text-sm font-medium transition"
+            className="inline-flex items-center gap-2 text-white bg-[#e15bbb] hover:bg-[#e15bbb]/80 px-5 py-2.5 rounded-lg text-sm font-medium transition"
           >
             Go to Assist <FaArrowRight />
           </a>
@@ -38,7 +38,7 @@ export default function CareAssistPage() {
         {/* IMAGE */}
         <div className="flex justify-center">
           <img
-            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+            src="/images/banner_01.png"
             alt="Mountain Climbing"
             className="rounded-xl object-cover w-full max-w-md"
           />
@@ -51,7 +51,7 @@ export default function CareAssistPage() {
         {/* IMAGE */}
         <div className="flex justify-center md:order-1 order-2">
           <img
-            src="https://images.unsplash.com/photo-1580281657527-47c61b3d4b6f"
+            src="/images/banner_02.png"
             alt="Care"
             className="rounded-xl object-cover w-full max-w-md"
           />
@@ -87,7 +87,7 @@ export default function CareAssistPage() {
             href="https://care.piaxu.com/"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-white bg-[#1F2937] hover:bg-black px-5 py-2.5 rounded-lg text-sm font-medium transition"
+            className="inline-flex items-center gap-2 text-white bg-[#e15bbb] hover:bg-[#e15bbb]/80 px-5 py-2.5 rounded-lg text-sm font-medium transition"
           >
             Go to Care <FaArrowRight />
           </a>
@@ -115,7 +115,7 @@ export default function CareAssistPage() {
 
         <a
           href="/contact"
-          className="inline-flex items-center gap-2 text-white bg-[#1F2937] hover:bg-black px-6 py-3 rounded-lg font-medium transition"
+          className="inline-flex items-center gap-2 text-white bg-[#e15bbb] hover:bg-[#e15bbb]/80 px-6 py-3 rounded-lg font-medium transition"
         >
           Write to us <FaArrowRight />
         </a>
