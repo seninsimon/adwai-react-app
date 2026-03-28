@@ -74,7 +74,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="py-4 border-t border-gray-200 text-center text-gray-500 text-sm">
-        <p>Copyright © 2025 adwai - All Right Reserved.</p>
+        <p>Copyright © {new Date().getFullYear()} adwai - All Right Reserved.</p>
       </div>
     </footer>
   );

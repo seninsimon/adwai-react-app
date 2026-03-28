@@ -2,7 +2,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 export default function CareAssistPage() {
   return (
-    <section className="container mx-auto px-4 mt-10 lg:mt-16 mb-16 space-y-16">
+    <section className="container mx-auto px-4 mt-10  space-y-16">
 
       {/* SECTION 1 */}
       <div className="grid md:grid-cols-2 gap-10 items-center">
