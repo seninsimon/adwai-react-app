@@ -1,126 +1,301 @@
+import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
-export default function CareAssistPage() {
+export default function GetStartedPage() {
+  const [openModal, setOpenModal] = useState(null);
+
+  const Modal = ({ title, children }) => {
+    if (!openModal) return null;
+
+    return (
+      <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+        <div className="bg-white w-full max-w-2xl rounded-lg p-6 space-y-4 shadow-lg">
+          <div className="flex justify-between items-center">
+            <h2 className="text-lg font-semibold text-[#1F2937]">{title}</h2>
+            <button onClick={() => setOpenModal(null)}>✕</button>
+          </div>
+          {children}
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <section className="container mx-auto px-4 mt-10  space-y-16">
+    <section className="max-w-6xl mx-auto px-4  space-y-20">
+      {/* HEADER */}
+      <div className="text-center space-y-4">
+        <h1 className="text-3xl font-semibold text-[#1F2937]">Get Started</h1>
+        <p className="text-gray-600 max-w-2xl mx-auto">
+          Create your account and choose your path. Start with a free account in
+          seconds. Tell us how you plan to use the platform so we can tailor
+          your experience.
+        </p>
+      </div>
 
-      {/* SECTION 1 */}
+      {/* STEP 1 */}
       <div className="grid md:grid-cols-2 gap-10 items-center">
-
         {/* TEXT */}
         <div className="space-y-4">
-          <h2 className="text-2xl lg:text-3xl font-semibold text-gray-800">
-            Organize your journeys
+          <h2 className="text-2xl font-semibold text-[#1F2937]">
+            Create Your Free Account
           </h2>
 
-          <p className="text-gray-600">
-            Organize your Journeys Assemble your crew, Add your tasks, Share your experiences. Track your progress and motivate each other. Start your group journey here.
+          <p className="text-gray-600 text-sm">
+            Start for free. No commitment required.
           </p>
 
-          <p className="text-gray-600">
-            Manage live chat, work flow interactions, and automation tools through Assists for improved experiences.
+          <p className="text-gray-600 text-sm">
+            Your free account gives you immediate access to core features,
+            including tokens to activate Journey Assists.
           </p>
 
-          <p className="text-gray-600">
-            Access our journey assists platform designed to manage and deliver organized activities.
-          </p>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• Journey creation & management</li>
+            <li>• Intelligent assists</li>
+            <li>• Personalized guidance</li>
+            <li>• Upgrade anytime</li>
+          </ul>
 
-          <a
-            href="https://assist.piaxu.com/dashboard"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 text-white bg-[#e15bbb] hover:bg-[#e15bbb]/80 px-5 py-2.5 rounded-lg text-sm font-medium transition"
+          <button
+            onClick={() => setOpenModal("step1")}
+            className="bg-[#e15bbb] text-white px-3 py-1 rounded-lg flex items-center gap-2"
           >
-            Go to Assist <FaArrowRight />
-          </a>
+            Create Free Account <FaArrowRight />
+          </button>
         </div>
 
         {/* IMAGE */}
         <div className="flex justify-center">
           <img
             src="/images/banner_01.png"
-            alt="Mountain Climbing"
-            className="rounded-xl object-cover w-full max-w-md"
+            className="rounded-xl max-w-md w-full"
+            alt="Step1"
           />
         </div>
       </div>
 
-      {/* SECTION 2 */}
+      {/* STEP 2 */}
       <div className="grid md:grid-cols-2 gap-10 items-center">
-
         {/* IMAGE */}
         <div className="flex justify-center md:order-1 order-2">
           <img
             src="/images/banner_02.png"
-            alt="Care"
-            className="rounded-xl object-cover w-full max-w-md"
+            className="rounded-xl max-w-md w-full"
+            alt="Step2"
           />
         </div>
 
         {/* TEXT */}
         <div className="space-y-4 md:order-2 order-1">
-          <h2 className="text-2xl lg:text-3xl font-semibold text-gray-800">
-            Are you a Care practitioner or looking for Care practitioner services
+          <h2 className="text-2xl font-semibold text-[#1F2937]">
+            Are You an Individual Practitioner?
           </h2>
 
-          <p className="text-gray-600">
-            Simplify your care journey. Find the right Care practitioner.
+          <p className="text-gray-600 text-sm">
+            Enable your professional tools and start managing care.
           </p>
 
-          <p className="text-gray-600">
-            Make care easier every step of the way. Book your appointment hassle-free, check into care.
+          <p className="text-gray-600 text-sm">
+            Manage availability, create care plans, and streamline workflows
+            using Care Assists.
           </p>
 
-          <p className="text-gray-600">
-            Transform the way you experience care. Spend quality time with your Care practitioner and customize the plan.
-          </p>
-
-          <p className="text-gray-600">
-            Effortlessly navigate your care journey through managed tasks and care assists
-          </p>
-
-          <p className="text-gray-600">
-            Access our care services platform designed to manage and deliver better support experiences for your users and customers.
-          </p>
-
-          <a
-            href="https://care.piaxu.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 text-white bg-[#e15bbb] hover:bg-[#e15bbb]/80 px-5 py-2.5 rounded-lg text-sm font-medium transition"
+          <button
+            onClick={() => setOpenModal("step2")}
+            className="bg-[#e15bbb] text-white px-3 py-1 rounded-lg flex items-center gap-2"
           >
-            Go to Care <FaArrowRight />
-          </a>
+            Set Up Practitioner Profile <FaArrowRight />
+          </button>
         </div>
       </div>
 
-      {/* SECTION 3 (LEFT ALIGNED) */}
-      <div className="max-w-2xl space-y-4">
+      {/* STEP 3 */}
+      <div className="grid md:grid-cols-2 gap-10 items-center">
+        {/* TEXT */}
+        <div className="space-y-4">
+          <h2 className="text-2xl font-semibold text-[#1F2937]">
+            Organization / Custom Setup
+          </h2>
 
-        <h2 className="text-2xl lg:text-3xl font-semibold text-gray-800">
-          Need Something Custom?
+          <p className="text-gray-600 text-sm">
+            Build a secure, scalable system tailored to your organization.
+          </p>
+
+          <p className="text-gray-600 text-sm">
+            Get private infrastructure, custom assists, and full control over
+            workflows.
+          </p>
+
+          <button
+            onClick={() => setOpenModal("step3")}
+            className="bg-[#e15bbb] text-white px-3 py-1 rounded-lg flex items-center gap-2"
+          >
+            Set up Organization Profile <FaArrowRight />
+          </button>
+        </div>
+
+        {/* IMAGE */}
+        <div className="flex justify-center">
+          <img
+            src="/images/banner_03.png"
+            className="rounded-xl max-w-md w-full"
+            alt="Step3"
+          />
+        </div>
+      </div>
+
+      {/* NOT SURE */}
+      <div className="text-center space-y-4">
+        <h2 className="text-xl font-semibold text-[#1F2937]">
+          Not Sure Where to Start?
         </h2>
 
         <p className="text-gray-600">
-          We support a wide range of use cases and partner models. Whether you're:
+          Start with a free account and explore at your own pace. Upgrade
+          anytime.
         </p>
 
-        <ul className="text-gray-600 space-y-2">
-          <li>• A practice with multiple practitioners</li>
-          <li>• Looking for intelligent solutions</li>
-          <li>• Representing an enterprise with large volume</li>
-          <li>• A non-profit organization</li>
-          <li>• Or interested in partnering with us</li>
-        </ul>
+        <div className="flex justify-center gap-4">
+          <button
+            onClick={() => setOpenModal("step1")}
+            className="bg-[#e15bbb] text-white px-3 py-1 rounded-lg"
+          >
+            Create Free Account
+          </button>
 
-        <a
-          href="/contact"
-          className="inline-flex items-center gap-2 text-white bg-[#e15bbb] hover:bg-[#e15bbb]/80 px-6 py-3 rounded-lg font-medium transition"
-        >
-          Write to us <FaArrowRight />
-        </a>
+          <button className="border px-3 py-1 rounded-lg">
+            Talk to Our Team
+          </button>
+        </div>
       </div>
 
+      {openModal === "step1" && (
+        <Modal title="Create Free Account">
+          <div className="grid md:grid-cols-2 gap-4">
+            <input className="border p-3 rounded-lg" placeholder="First Name" />
+            <input className="border p-3 rounded-lg" placeholder="Last Name" />
+            <input
+              className="border p-3 rounded-lg"
+              placeholder="Assist Name"
+            />
+            <input
+              className="border p-3 rounded-lg"
+              placeholder="Email Address"
+            />
+            <input
+              type="password"
+              className="border p-3 rounded-lg"
+              placeholder="Password"
+            />
+            <input
+              type="password"
+              className="border p-3 rounded-lg"
+              placeholder="Confirm Password"
+            />
+          </div>
+
+          <div className="space-y-4">
+            <p className="text-sm font-semibold text-gray-800">
+              What best describes you?
+            </p>
+
+            <div className="space-y-3">
+              {[
+                { label: "Care Seeker", value: "care_seeker" },
+                { label: "Practitioner", value: "practitioner" },
+                { label: "Organization", value: "organization" },
+              ].map((item) => (
+                <label
+                  key={item.value}
+                  className="flex items-center gap-3 p-3 border border-gray-300 rounded-lg cursor-pointer hover:shadow-sm transition"
+                >
+                  <input
+                    type="radio"
+                    name="role"
+                    value={item.value}
+                    className="accent-gray-800"
+                  />
+                  <span className="text-sm text-gray-700">{item.label}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <button className="bg-[#e15bbb] text-white px-3 py-1 rounded-lg">
+            Create Free Account
+          </button>
+        </Modal>
+      )}
+
+      {/* STEP 2 MODAL */}
+      {openModal === "step2" && (
+        <Modal title="Practitioner Setup">
+          <div className="grid md:grid-cols-2 gap-4">
+            <input
+              className="border p-3 rounded-lg"
+              placeholder="Practice Name"
+            />
+            <input className="border p-3 rounded-lg" placeholder="Specialty" />
+            <input
+              className="border p-3 rounded-lg"
+              placeholder="Certifications"
+            />
+            <input className="border p-3 rounded-lg" placeholder="Location" />
+            <input
+              className="border p-3 rounded-lg"
+              placeholder="Availability"
+            />
+            <input
+              className="border p-3 rounded-lg"
+              placeholder="Services Offered"
+            />
+          </div>
+
+          <textarea
+            className="border p-3 rounded-lg w-full"
+            placeholder="Bio"
+          />
+
+          <button className="bg-[#e15bbb] text-white px-6 py-3 rounded-lg">
+            Save Practitioner Profile
+          </button>
+        </Modal>
+      )}
+
+      {/* STEP 3 MODAL */}
+      {openModal === "step3" && (
+        <Modal title="Organization Setup">
+          <div className="grid md:grid-cols-2 gap-4">
+            <input
+              className="border p-3 rounded-lg"
+              placeholder="Organization Name"
+            />
+            <input
+              className="border p-3 rounded-lg"
+              placeholder="Practitioners Count"
+            />
+            <input
+              className="border p-3 rounded-lg"
+              placeholder="Specialties"
+            />
+            <input
+              className="border p-3 rounded-lg"
+              placeholder="Contact Name"
+            />
+            <input className="border p-3 rounded-lg" placeholder="Email" />
+            <input className="border p-3 rounded-lg" placeholder="Phone" />
+          </div>
+
+          <textarea
+            className="border p-3 rounded-lg w-full"
+            placeholder="Needs / Goals"
+          />
+
+          <button className="bg-[#e15bbb] text-white px-3 py-1 rounded-lg">
+            Submit
+          </button>
+        </Modal>
+      )}
     </section>
   );
 }
