@@ -21,7 +21,7 @@ export default function GetStartedPage() {
   };
 
   return (
-    <section className="max-w-6xl mx-auto px-4  space-y-20">
+    <section className="max-w-[1250px]  mx-auto px-6 space-y-20">
       {/* HEADER */}
       <div className="text-center space-y-4">
         <h1 className="text-3xl font-semibold text-[#1F2937]">Get Started</h1>
@@ -40,16 +40,16 @@ export default function GetStartedPage() {
             Create Your Free Account
           </h2>
 
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 ">
             Start for free. No commitment required.
           </p>
 
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 ">
             Your free account gives you immediate access to core features,
             including tokens to activate Journey Assists.
           </p>
 
-          <ul className="text-sm text-gray-600 space-y-1">
+          <ul className=" text-gray-600 space-y-1">
             <li>• Journey creation & management</li>
             <li>• Intelligent assists</li>
             <li>• Personalized guidance</li>
@@ -58,7 +58,7 @@ export default function GetStartedPage() {
 
           <button
             onClick={() => setOpenModal("step1")}
-            className="bg-[#e15bbb] text-white px-3 py-1 rounded-lg flex items-center gap-2"
+            className="bg-[#e15bbb] text-white cursor-pointer px-3 py-2 rounded-lg flex items-center gap-2"
           >
             Create Free Account <FaArrowRight />
           </button>
@@ -91,18 +91,18 @@ export default function GetStartedPage() {
             Are You an Individual Practitioner?
           </h2>
 
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 ">
             Enable your professional tools and start managing care.
           </p>
 
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 ">
             Manage availability, create care plans, and streamline workflows
             using Care Assists.
           </p>
 
           <button
             onClick={() => setOpenModal("step2")}
-            className="bg-[#e15bbb] text-white px-3 py-1 rounded-lg flex items-center gap-2"
+            className="bg-[#e15bbb] text-white cursor-pointer px-3 py-2 rounded-lg flex items-center gap-2"
           >
             Set Up Practitioner Profile <FaArrowRight />
           </button>
@@ -117,18 +117,18 @@ export default function GetStartedPage() {
             Organization / Custom Setup
           </h2>
 
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 ">
             Build a secure, scalable system tailored to your organization.
           </p>
 
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 ">
             Get private infrastructure, custom assists, and full control over
             workflows.
           </p>
 
           <button
             onClick={() => setOpenModal("step3")}
-            className="bg-[#e15bbb] text-white px-3 py-1 rounded-lg flex items-center gap-2"
+            className="bg-[#e15bbb] cursor-pointer text-white px-3 py-2 rounded-lg flex items-center gap-2"
           >
             Set up Organization Profile <FaArrowRight />
           </button>
@@ -145,7 +145,7 @@ export default function GetStartedPage() {
       </div>
 
       {/* NOT SURE */}
-      <div className="text-center space-y-4">
+      <div className="text-center space-y-4 ">
         <h2 className="text-xl font-semibold text-[#1F2937]">
           Not Sure Where to Start?
         </h2>
@@ -158,12 +158,12 @@ export default function GetStartedPage() {
         <div className="flex justify-center gap-4">
           <button
             onClick={() => setOpenModal("step1")}
-            className="bg-[#e15bbb] text-white px-3 py-1 rounded-lg"
+            className="bg-[#e15bbb] cursor-pointer text-white px-3 py-2 rounded-lg"
           >
             Create Free Account
           </button>
 
-          <button className="border px-3 py-1 rounded-lg">
+          <button className="border cursor-pointer px-3 py-2 rounded-lg">
             Talk to Our Team
           </button>
         </div>
@@ -195,7 +195,7 @@ export default function GetStartedPage() {
           </div>
 
           <div className="space-y-4">
-            <p className="text-sm font-semibold text-gray-800">
+            <p className=" font-semibold text-gray-800">
               What best describes you?
             </p>
 
@@ -215,13 +215,13 @@ export default function GetStartedPage() {
                     value={item.value}
                     className="accent-gray-800"
                   />
-                  <span className="text-sm text-gray-700">{item.label}</span>
+                  <span className=" text-gray-700">{item.label}</span>
                 </label>
               ))}
             </div>
           </div>
 
-          <button className="bg-[#e15bbb] text-white px-3 py-1 rounded-lg">
+          <button className="bg-[#e15bbb] cursor-pointer text-white px-3 py-2 rounded-lg">
             Create Free Account
           </button>
         </Modal>
@@ -291,7 +291,7 @@ export default function GetStartedPage() {
             placeholder="Needs / Goals"
           />
 
-          <button className="bg-[#e15bbb] text-white px-3 py-1 rounded-lg">
+          <button className="bg-[#e15bbb] text-white px-3 py-2 rounded-lg">
             Submit
           </button>
         </Modal>

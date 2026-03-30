@@ -1,70 +1,125 @@
-import { Link } from 'react-router-dom';
-import { FaCheck } from 'react-icons/fa';
+import { useState } from "react";
+import { FaCheck } from "react-icons/fa";
+
+function PlanCard({ plan }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="bg-white rounded-lg border border-[#D1D5DB] p-6 flex flex-col h-full hover:shadow-md transition-all">
+      {/* Title */}
+      <h2 className="text-xl font-semibold text-[#1F2937] text-center">
+        {plan.name}
+      </h2>
+
+      {/* Short Description */}
+      <p className="text-sm text-gray-600 mt-4 text-center">
+        {plan.short}
+      </p>
+
+      {/* CTA */}
+      <div className="mt-6">
+        <a
+          href="http://journeys.adwai.com/login"
+          className="block text-center bg-[#1F2937] text-white py-2.5 rounded-lg text-sm hover:opacity-90 transition"
+        >
+          Get Started
+        </a>
+      </div>
+
+      {/* Features */}
+      <div className="mt-6 space-y-3">
+        {plan.features.map((feature, i) => (
+          <div key={i} className="flex items-start gap-2 text-sm text-gray-600">
+            <FaCheck className="text-green-500 mt-1" />
+            <span>{feature}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Long Description */}
+      <div className="mt-6 text-sm text-gray-600">
+        <p className={expanded ? "" : "line-clamp-1 "}>
+          {plan.long}
+        </p>
+
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="mt-2 text-[#1F2937] font-medium hover:underline text-sm"
+        >
+          {expanded ? "Read Less" : "Read More"}
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function Pricing() {
   const plans = [
     {
-      name: 'Premium',
-      price: '$0',
-      credits: '50 Credits',
-      features: ['Perfect for getting started and exploring the platform.']
+      name: "Freemium",
+      short:
+        "Perfect for journey participants getting started. Access a free account to manage tasks where you can enable Assists for guided, intelligent care workflows using built-in tokens.",
+      long: `The Freemium Plan is designed for individuals seeking care journey support without any upfront cost. Create your free account and immediately begin using tools included. Users can enable Journey Assists—intelligent tools that help guide you through care-related workflows, decisions, and next steps.
+
+With included tokens, you can activate assisted experiences that simplify navigating care journeys, whether you're organizing appointments, tracking needs, or exploring support options. This plan is ideal for those who want to experience the platform’s core capabilities before upgrading to more advanced features.`,
+      features: [
+        "Free account access",
+        "Journey Assists enabled",
+        "Built-in tokens included",
+        "Task & care workflow support"
+      ]
     },
     {
-      name: 'Standard Plans',
-      price: '$5',
-      credits: '+25 Credits',
-      features: ['Great for light usage or occasional needs.']
+      name: "Standard",
+      short:
+        "Empower your journey participants with scheduling, care plans, and shared Care Assists—all powered by intelligent workflow tools and included tokens to help assist your clients",
+      long: `The Standard Plan is tailored for journey participants who are also independent practitioners who want to streamline operations and enhance care. This plan enables you to set your availability, manage personalized care plans, and access shared Practitioner Care Tools.
+
+With included tokens, you can activate both Journey Assists and Care Assists—intelligent workflow companions designed to support everything from care coordination to service delivery. Features such as Find Care Assist and Book Care Assist make it easier to connect with clients and manage engagements efficiently.
+
+This plan is ideal for professionals looking to scale their services while maintaining high-quality, personalized care.`,
+      features: [
+        "Scheduling & availability management",
+        "Personalized care plans",
+        "Journey & Care Assists",
+        "Find & Book Care Assist tools"
+      ]
     },
     {
-      name: 'Seasoned Plans',
-      price: '$25',
-      credits: '+160 Credits',
-      features: ['Best value for regular users with higher volume needs.']
+      name: "Custom Plan",
+      short:
+        "Custom-built for multi-practitioner organizations. Deploy private, encrypted workflow systems with dedicated delivery pods and your own trainable intelligent assists.",
+      long: `The Custom Plan is designed for care organizations and practices with multiple practitioners that require scalable, secure, and customizable infrastructure. Through dedicated delivery pods, your organization gains access to private, fully encrypted environments powered by state-of-the-art intelligent workflow engines.
+
+This plan allows you to create, train, and manage your own proprietary assists—tailored specifically to your workflows, standards, and operational needs. You maintain full control over how assists are deployed, refined, and integrated across your teams.
+
+Ideal for organizations seeking enterprise-grade performance, security, and flexibility, the Custom Plan transforms how care is delivered at scale—while maintaining privacy, control, and efficiency.`,
+      features: [
+        "Multi-practitioner support",
+        "Private encrypted systems",
+        "Custom trainable assists",
+        "Dedicated delivery infrastructure"
+      ]
     }
   ];
 
   return (
-    <section id="price" className="py-16  bg-opacity-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-[#4C74F6] via-[#E253E5] to-[#FF7E30] inline-block mb-4">
+    <section id="price" className="py-3">
+      <div className="max-w-6xl mx-auto px-4 space-y-10">
+        {/* Header */}
+        <div className="text-center space-y-2">
+          <h1 className="text-3xl font-semibold text-[#1F2937]">
             Pricing
           </h1>
-          <h4 className="text-xl font-semibold text-gray-800 mb-2">Simple, Flexible Pricing</h4>
-          <p className="text-gray-600">Choose the plan that fits your needs. Start for free or upgrade for more volume and benefits.</p>
+          <p className="text-sm text-gray-600">
+            Simple, flexible plans designed to grow with your care journey.
+          </p>
         </div>
 
-        <div className="flex flex-wrap justify-center -mx-4">
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {plans.map((plan, index) => (
-            <div key={index} className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-              <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 duration-300 border border-gray-200 p-8 h-full flex flex-col relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-full h-2 bg-[#cad2ff] transition-colors group-hover:bg-[#627afe]"></div>
-                
-                <h2 className="text-2xl font-semibold text-center mt-4 text-gray-800">{plan.name}</h2>
-                
-                <div className="text-center mt-8 text-[#627afe]">
-                  <span className="text-6xl font-bold tracking-tighter">{plan.price}</span>
-                  <h4 className="text-xl mt-4 font-medium flex items-center justify-center gap-2 text-gray-700">
-                    <span className="text-2xl">💳</span> {plan.credits}
-                  </h4>
-                </div>
-
-                <div className="text-center mt-8 mb-8">
-                  <a href="http://journeys.adwai.com/login" className="inline-block bg-[#e867e6] hover:bg-[#8967ef] text-white px-8 py-3 rounded-full font-medium transition-colors w-full">
-                    Get Started
-                  </a>
-                </div>
-
-                <div className="mt-auto pt-8 border-t border-gray-100">
-                  {plan.features.map((feature, fIndex) => (
-                    <div key={fIndex} className="flex items-start gap-3 text-gray-600 text-sm">
-                      <FaCheck className="text-[#94d201] mt-1 shrink-0" />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <PlanCard key={index} plan={plan} />
           ))}
         </div>
       </div>
