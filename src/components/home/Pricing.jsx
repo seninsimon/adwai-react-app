@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function PlanCard({ plan }) {
   const [expanded, setExpanded] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="bg-white rounded-lg border border-[#D1D5DB] p-6 flex flex-col h-full hover:shadow-md transition-all">
@@ -18,13 +20,13 @@ function PlanCard({ plan }) {
 
       {/* CTA */}
       <div className="mt-6">
-        <a
-          href="http://journeys.adwai.com/login"
-          className="block text-center bg-[#1F2937] text-white py-2.5 rounded-lg text-sm hover:opacity-90 transition"
-        >
-          Get Started
-        </a>
-      </div>
+      <button
+        onClick={() => navigate("/careassist")}
+        className="block w-full text-center bg-[#1F2937] text-white py-2.5 rounded-lg text-sm hover:opacity-90 transition"
+      >
+        Get Started
+      </button>
+    </div>
 
       {/* Features */}
       <div className="mt-6 space-y-3">
