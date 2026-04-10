@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function GetStartedPage() {
   const [openModal, setOpenModal] = useState(null);
+  const navigate = useNavigate();
 
   const Modal = ({ title, children }) => {
     if (!openModal) return null;
@@ -57,10 +59,12 @@ export default function GetStartedPage() {
           </ul>
 
           <button
-            onClick={() => setOpenModal("step1")}
-            className="bg-[#e15bbb] text-white cursor-pointer px-3 py-2 rounded-lg flex items-center gap-2"
+            onClick={() =>
+              window.open("https://care.piaxu.com/login", "_blank")
+            }
+            className="bg-[#e15bbb] cursor-pointer text-white px-3 py-2 rounded-lg"
           >
-            Create Free Account <FaArrowRight />
+            Create Free Account
           </button>
         </div>
 
@@ -157,111 +161,90 @@ export default function GetStartedPage() {
 
         <div className="flex justify-center gap-4">
           <button
-            onClick={() => setOpenModal("step1")}
-            className="bg-[#e15bbb] cursor-pointer text-white px-3 py-2 rounded-lg"
+            onClick={() => navigate("/contact")}
+            className="border cursor-pointer px-3 py-2 rounded-lg"
           >
-            Create Free Account
-          </button>
-
-          <button className="border cursor-pointer px-3 py-2 rounded-lg">
             Talk to Our Team
           </button>
         </div>
       </div>
 
-      {openModal === "step1" && (
-        <Modal title="Create Free Account">
-          <div className="grid md:grid-cols-2 gap-4">
-            <input className="border p-3 rounded-lg" placeholder="First Name" />
-            <input className="border p-3 rounded-lg" placeholder="Last Name" />
-            <input
-              className="border p-3 rounded-lg"
-              placeholder="Assist Name"
-            />
-            <input
-              className="border p-3 rounded-lg"
-              placeholder="Email Address"
-            />
-            <input
-              type="password"
-              className="border p-3 rounded-lg"
-              placeholder="Password"
-            />
-            <input
-              type="password"
-              className="border p-3 rounded-lg"
-              placeholder="Confirm Password"
-            />
-          </div>
-
-          <div className="space-y-4">
-            <p className=" font-semibold text-gray-800">
-              What best describes you?
-            </p>
-
-            <div className="space-y-3">
-              {[
-                { label: "Care Seeker", value: "care_seeker" },
-                { label: "Practitioner", value: "practitioner" },
-                { label: "Organization", value: "organization" },
-              ].map((item) => (
-                <label
-                  key={item.value}
-                  className="flex items-center gap-3 p-3 border border-gray-300 rounded-lg cursor-pointer hover:shadow-sm transition"
-                >
-                  <input
-                    type="radio"
-                    name="role"
-                    value={item.value}
-                    className="accent-gray-800"
-                  />
-                  <span className=" text-gray-700">{item.label}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-
-          <button className="bg-[#e15bbb] cursor-pointer text-white px-3 py-2 rounded-lg">
-            Create Free Account
-          </button>
-        </Modal>
-      )}
-
       {/* STEP 2 MODAL */}
       {openModal === "step2" && (
         <Modal title="Practitioner Setup">
-          <div className="grid md:grid-cols-2 gap-4">
-            <input
-              className="border p-3 rounded-lg"
-              placeholder="Practice Name"
+          <div className="space-y-4">
+            {/* Basic Info */}
+            <div className="grid md:grid-cols-2 gap-4">
+              <input
+                className="border border-[#D1D5DB] p-3 rounded-lg"
+                placeholder="Full Name"
+              />
+              <input
+                className="border border-[#D1D5DB] p-3 rounded-lg"
+                placeholder="Email"
+                type="email"
+              />
+              <input
+                className="border border-[#D1D5DB] p-3 rounded-lg"
+                placeholder="Password"
+                type="password"
+              />
+              <input
+                className="border border-[#D1D5DB] p-3 rounded-lg"
+                placeholder="Experience (years)"
+              />
+            </div>
+
+            {/* Professional Details */}
+            <div className="grid md:grid-cols-2 gap-4">
+              <input
+                className="border border-[#D1D5DB] p-3 rounded-lg"
+                placeholder="Consultation Fee"
+              />
+              <input
+                className="border border-[#D1D5DB] p-3 rounded-lg"
+                placeholder="Specialization"
+              />
+              <input
+                className="border border-[#D1D5DB] p-3 rounded-lg"
+                placeholder="Medical Degree"
+              />
+            </div>
+
+            {/* Address */}
+            <div className="grid md:grid-cols-2 gap-4">
+              <input
+                className="border border-[#D1D5DB] p-3 rounded-lg"
+                placeholder="Clinic Address"
+              />
+              <input
+                className="border border-[#D1D5DB] p-3 rounded-lg"
+                placeholder="City"
+              />
+              <input
+                className="border border-[#D1D5DB] p-3 rounded-lg"
+                placeholder="State"
+              />
+              <input
+                className="border border-[#D1D5DB] p-3 rounded-lg"
+                placeholder="ZIP Code"
+              />
+            </div>
+
+            {/* Bio */}
+            <textarea
+              className="border border-[#D1D5DB] p-3 rounded-lg w-full"
+              placeholder="Bio"
+              rows={4}
             />
-            <input className="border p-3 rounded-lg" placeholder="Specialty" />
-            <input
-              className="border p-3 rounded-lg"
-              placeholder="Certifications"
-            />
-            <input className="border p-3 rounded-lg" placeholder="Location" />
-            <input
-              className="border p-3 rounded-lg"
-              placeholder="Availability"
-            />
-            <input
-              className="border p-3 rounded-lg"
-              placeholder="Services Offered"
-            />
+
+            {/* Submit */}
+            <button className="w-full bg-[#e15bbb] text-white px-6 py-3 rounded-lg hover:opacity-90 transition">
+              Submit
+            </button>
           </div>
-
-          <textarea
-            className="border p-3 rounded-lg w-full"
-            placeholder="Bio"
-          />
-
-          <button className="bg-[#e15bbb] text-white px-6 py-3 rounded-lg">
-            Save Practitioner Profile
-          </button>
         </Modal>
       )}
-
       {/* STEP 3 MODAL */}
       {openModal === "step3" && (
         <Modal title="Organization Setup">
