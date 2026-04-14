@@ -22,7 +22,11 @@ export default function Header() {
 
         {/* Logo */}
         <Link to="/" className="w-40 sm:w-48">
-          <img src="/images/adwailogo.png" alt="Adwai" className="w-full h-auto" />
+          <img 
+            src={window.location.href.includes('piaxu') ? '/images/piaxu_logo.png' : '/images/adwailogo.png'} 
+            alt={window.location.href.includes('piaxu') ? 'Piaxu' : 'Adwai'} 
+            className="w-full h-auto" 
+          />
         </Link>
 
         {/* Desktop Nav */}
